@@ -19,6 +19,9 @@ resource "aws_internet_gateway" "main" {
 resource "aws_eip" "nat" {
   count = var.nat_per_az ? var.number_of_azs : 1
   vpc   = true
+  tags = {
+    Name = var.name
+  }
 }
 
 resource "aws_nat_gateway" "main" {
