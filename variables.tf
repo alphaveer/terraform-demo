@@ -5,3 +5,7 @@ variable "region" {
 variable "profile" {
   default = "alphav"
 }
+
+variable "name" {
+  default = "terraform-demo"
+}

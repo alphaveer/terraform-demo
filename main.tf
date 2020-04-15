@@ -5,9 +5,9 @@ module "vpc" {
   vpc_cidr = "10.10.0.0/16"
 }
 
-output "vpc" {
-  value = module.vpc
-}
+#output "vpc" {
+#  value = module.vpc
+#}
 
 resource "aws_key_pair" "main" {
   key_name   = "terraform-demo"

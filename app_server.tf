@@ -43,6 +43,7 @@ resource "aws_instance" "app" {
 }
 
 resource "null_resource" "cluster" {
+
   triggers = {
     checksum = filemd5("run.sh")
   }
@@ -57,7 +58,7 @@ resource "null_resource" "cluster" {
   }
 
   provisioner "remote-exec" {
-    script = "run.sh"
+    script = "${path.module}/run.sh"
   }
 }
 
